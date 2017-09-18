@@ -1,8 +1,11 @@
-const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
     app: './src/browser.js'
+  },
+  output: {
+    filename: './public/static/app.bundle.js'
   },
   module: {
     rules: [
@@ -18,13 +21,10 @@ module.exports = {
   },
   devtool: '',
   devServer: {
-    contentBase: './public',
-    hot: true
+    contentBase: './public'
   },
   plugins: [
-  ],
-  output: {
-    filename: 'static/app.bundle.js',
-    path: path.resolve(__dirname, './public/')
-  }
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

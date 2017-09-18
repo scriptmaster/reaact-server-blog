@@ -6,14 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && babel-node src/server",
-    "dev": "webpack-dev-server --hot",
-    "build": "webpack && echo \"\n\n\nInstall missing packages with npm i\n\n\n\n\""
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "webpack && echo \"\n\n\nInstall missing packages with node npm-link.js\n\n\n\n\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",

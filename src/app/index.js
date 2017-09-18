@@ -3,6 +3,6 @@ import React from "react";
 
 export default class App extends React.Component {
     render() {
-        return <div>Hello : {this.props.message}</div>;
+        return <div>{this.props.origin} rendered.</div>;
     }
 }
